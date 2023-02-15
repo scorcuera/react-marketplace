@@ -1,12 +1,28 @@
+import { useEffect, useState } from 'react'
+import { productHandler } from './handlers/productHandler';
+import Product from './components/Product'
+
 import './App.css'
-import ImageUploadForm from './components/ImageUploadForm'
-import Image from './components/Image'
 
 function App() {
+  let [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    let data = await productHandler.loadProducts();
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [])
+
   return (
     <>
-      <ImageUploadForm />
-      <Image />
+      {products.map(product => {
+        return (
+          <Product key={product.id} data={[product.title, product.description, product.price]} />
+        )
+      })}
     </>
   )
 }
