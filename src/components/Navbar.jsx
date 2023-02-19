@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 function Navbar() {
-  return (
-    <nav>
-      <li>All products</li>
-      <li>Add product</li>
-    </nav>
-  )
+    return (
+        <nav>
+            <Link to="/homepage" className="nav--item">Homepage</Link>
+            <Link to="/products" className="nav--item">My products</Link>
+            <Link to="/newProduct" className="nav--item">Add product</Link>
+        </nav>
+    )
 }
 
 export default Navbar

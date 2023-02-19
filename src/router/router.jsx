@@ -1,28 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-import App from "../App";
+import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
+import Home from "../pages/Home";
 
 import { productHandler } from "../handlers/productHandler";
+import CreateProduct from "../pages/CreateProduct";
 
-const fetchProducts = async () => {
-    const products = await productHandler.loadProducts();
-    return { products };
-}
-
-const fetchProduct = async ({ params }) => {
-    const product = await productHandler.loadProduct(params.id);
-    return { product };
-}
-
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
         children: [
             {
                 path: "products",
-                element: <App />,
+                element: <Dashboard />,
                 loader: fetchProducts,
             },
             {
@@ -30,8 +22,24 @@ const router = createBrowserRouter([
                 element: <ProductInfo />,
                 loader: fetchProduct,
             },
+            {
+                path: "newProduct",
+                element: <CreateProduct />,
+            },
+            {
+                path: "homepage",
+                element: <Home />,
+            },
         ],
     },
 ]);
 
-export default router;
+async function fetchProducts() {
+    const products = await productHandler.loadProducts();
+    return { products };
+}
+
+async function fetchProduct({ params }) {
+    const product = await productHandler.loadProduct(params.id);
+    return { product };
+}

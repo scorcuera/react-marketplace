@@ -1,8 +1,8 @@
 import { Link, useLoaderData } from "react-router-dom"
-import Product from './components/Product'
-import './App.css'
+import Product from '../components/Product'
+import './Dashboard.css'
 
-function App() {
+function Dashboard() {
     const { products } = useLoaderData();
 
     return (
@@ -16,4 +16,4 @@ function App() {
     )
 }
 
-export default App
+export default Dashboard;

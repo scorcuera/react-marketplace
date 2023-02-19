@@ -4,13 +4,12 @@ import EditIcon from '@mui/icons-material/Edit';
 
 function Product({ product }) {
 
-    const { title, description, price } = product;
+    const { title, price } = product;
 
     return (
         <div className="productCard">
             <div className="productCard--info">
                 <h1>{title}</h1>
-                <p>{description}</p>
                 <p>price: {price}$</p>
             </div>
             <div className="productCard--buttons">
