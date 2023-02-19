@@ -7,14 +7,12 @@ function App() {
 
     return (
         <>
-            {products.map(product => {
-                return (
-                    <Link to={`products/${product.id}`}>
-                        <Product key={product.id} data={[product.title, product.description, product.price]} />
-                    </Link>
-                )
-            })}
-        </>
+        {products.map((product) => (
+          <Link key={product.id} to={`products/${product.id}`} title={product.title} className="product--link">
+            <Product product={product} />
+          </Link>
+        ))}
+      </>
     )
 }
 

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import App from "../App";
-import Product from "../components/Product";
+import ProductInfo from "../components/ProductInfo";
 
 import { productHandler } from "../handlers/productHandler";
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "products/products/:id",
-                element: <Product />,
+                element: <ProductInfo />,
                 loader: fetchProduct,
             },
         ],
