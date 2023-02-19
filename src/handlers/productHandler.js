@@ -2,7 +2,18 @@ import { productService } from "../services/productService";
 
 export const productHandler = {
     addProduct(newProduct){
-        // pending to be completed
+        if (!newProduct) {
+            return;
+        }
+
+        let newProductStructure = {
+            "title": newProduct.title,
+            "description": newProduct.description,
+            "price": newProduct.price,
+        }
+
+        return productService.submitProduct(newProductStructure);
+        
     },
     loadProducts(){
         return productService.getProducts();

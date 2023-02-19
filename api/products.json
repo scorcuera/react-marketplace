@@ -29,6 +29,12 @@
       "description": "solo lo he usado una vez hasta que me caí",
       "price": 100,
       "id": 5
+    },
+    {
+      "title": "avio ",
+      "description": "vuela aún",
+      "price": "89",
+      "id": 6
     }
   ]
 }
