@@ -3,6 +3,7 @@ import Root from "./Root";
 import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
 import Home from "../pages/Home";
+import EditProduct from "../pages/EditProduct";
 
 import { productHandler } from "../handlers/productHandler";
 import CreateProduct from "../pages/CreateProduct";
@@ -30,6 +31,12 @@ export const router = createBrowserRouter([
                 path: "homepage",
                 element: <Home />,
             },
+            {
+                path: "editProduct/:id",
+                element: <EditProduct />,
+                loader: fetchProduct
+            },
+
         ],
     },
 ]);

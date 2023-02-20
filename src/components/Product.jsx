@@ -1,6 +1,7 @@
 import "./Product.css";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom';
 
 function Product({ product }) {
 
@@ -14,7 +15,9 @@ function Product({ product }) {
             </div>
             <div className="productCard--buttons">
                 <DeleteIcon fontSize="large" />
-                <EditIcon fontSize="large" />
+                <Link className="edit--link" to={`/editProduct/${product.id}`}>
+                    <EditIcon fontSize="large" color="inherit" />
+                </Link>
             </div>
         </div>
     )
