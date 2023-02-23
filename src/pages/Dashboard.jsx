@@ -1,16 +1,22 @@
-import { Link, useLoaderData } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
+import { useState } from "react";
+import { productHandler } from "../handlers/productHandler";
 import Product from '../components/Product'
 import './Dashboard.css'
 
 function Dashboard() {
     const { products } = useLoaderData();
+    const [productsData, setProductsData] = useState(products);
+
+    const deleteProduct = async (id) => {
+      await productHandler.deleteProduct(id);
+      setProductsData(productsData.filter(product => product.id !== id))
+  }
 
     return (
         <>
-        {products.map((product) => (
-          <Link key={product.id} to={`products/${product.id}`} title={product.title} className="product--link">
-            <Product product={product} />
-          </Link>
+        {productsData.map((product) => (
+            <Product product={product} deleteProduct={deleteProduct} />
         ))}
       </>
     )

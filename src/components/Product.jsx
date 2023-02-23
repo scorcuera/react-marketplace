@@ -9,9 +9,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 
-function Product({ product }) {
+function Product({ product, deleteProduct }) {
 
-    const { title, price, image } = product;
+    const { id, title, price, image } = product;
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -26,7 +26,7 @@ function Product({ product }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small"><DeleteIcon fontSize="large" />Delete</Button>
+                <Button size="small" onClick={() => deleteProduct(id)}><DeleteIcon fontSize="large" />Delete</Button>
                 <Link className="edit--link" to={`/editProduct/${product.id}`}>
                     <Button size="small"><EditIcon fontSize="large" color="inherit" />Edit</Button>
                 </Link>
