@@ -1,25 +1,37 @@
 import "./Product.css";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 
 function Product({ product }) {
 
-    const { title, price } = product;
+    const { title, price, image } = product;
 
     return (
-        <div className="productCard">
-            <div className="productCard--info">
-                <h1>{title}</h1>
-                <p>price: {price}$</p>
-            </div>
-            <div className="productCard--buttons">
-                <DeleteIcon fontSize="large" />
+        <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+                sx={{ height: 140 }}
+                image={image}
+                title={title}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {title} - price: {price}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small"><DeleteIcon fontSize="large" />Delete</Button>
                 <Link className="edit--link" to={`/editProduct/${product.id}`}>
-                    <EditIcon fontSize="large" color="inherit" />
+                    <Button size="small"><EditIcon fontSize="large" color="inherit" />Edit</Button>
                 </Link>
-            </div>
-        </div>
+            </CardActions>
+        </Card>
     )
 }
 

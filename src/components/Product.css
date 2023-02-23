@@ -12,11 +12,16 @@
 }
 
 .productCard--info{
+    max-width: 100%;
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+}
+
+.productCard--image-container img {
+    max-width: 15rem;
 }
 
 .productCard--buttons{

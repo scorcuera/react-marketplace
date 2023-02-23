@@ -10,6 +10,7 @@ export const productHandler = {
             "title": newProduct.title,
             "description": newProduct.description,
             "price": newProduct.price,
+            "image": newProduct.image
         }
 
         return productService.submitProduct(newProductStructure);
