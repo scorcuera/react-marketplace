@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
-import Home from "../pages/Home";
 import EditProduct from "../pages/EditProduct";
 
 import { productHandler } from "../handlers/productHandler";
@@ -14,7 +13,12 @@ export const router = createBrowserRouter([
         element: <Root />,
         children: [
             {
-                path: "products",
+                path: "/",
+                element: <Dashboard />,
+                loader: fetchProducts,
+            },
+            {
+                path: "/products",
                 element: <Dashboard />,
                 loader: fetchProducts,
             },
@@ -26,10 +30,6 @@ export const router = createBrowserRouter([
             {
                 path: "newProduct",
                 element: <CreateProduct />,
-            },
-            {
-                path: "homepage",
-                element: <Home />,
             },
             {
                 path: "editProduct/:id",
