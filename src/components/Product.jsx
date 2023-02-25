@@ -31,6 +31,11 @@ function Product({ product, deleteProduct }) {
                     <Button size="small"><EditIcon fontSize="large" color="inherit" />Edit</Button>
                 </Link>
             </CardActions>
+            <CardActions>
+                <Link className="edit--link" to={`/products/${product.id}`}>
+                    <Button size="small">More info</Button>
+                </Link>
+            </CardActions>
         </Card>
     )
 }
