@@ -1,6 +1,6 @@
-# Recursos para el Proyecto de E-commerce
+# Recursos para el Proyecto de un Marketplace
 
-En este repositorio encontrarás ejemplos de funcionalidades que tendrás que incorporar en el sexto proyecto del bootcamp (construir la parte frontal del dashboard de un marketplace).
+Este repositorio te muestra un ejemplo del dashboard de un marketplace, donde encontrarás las funcionalidades que tendrás que incorporar en el sexto proyecto del bootcamp.
 
 ## Inicializar el proyecto
 
@@ -21,10 +21,3 @@ Por otra parte, para correr la API en un servidor local:
 ```node
 json-server --watch ./api/products.json
 ```
-:exclamation:
-Este último comando no lo puedes utilizar en `main`, ya que ahí no existe la carpeta `api`.
-
-## Ramas
-
-En las distintas ramas encontrarás los recursos que te ayudarán.
-Por ejemplo, en la rama `feature/how-to-upload-images` está el código relativo a cómo subir y enviar una imagen a la fake api.
