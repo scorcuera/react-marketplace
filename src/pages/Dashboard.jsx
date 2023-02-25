@@ -16,7 +16,7 @@ function Dashboard() {
     return (
         <>
         {productsData.map((product) => (
-            <Product product={product} deleteProduct={deleteProduct} />
+            <Product key={product.id} product={product} deleteProduct={deleteProduct} />
         ))}
       </>
     )

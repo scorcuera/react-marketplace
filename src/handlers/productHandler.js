@@ -14,7 +14,6 @@ export const productHandler = {
         }
 
         return productService.submitProduct(newProductStructure);
-        
     },
     loadProducts(){
         return productService.getProducts();
@@ -25,7 +24,18 @@ export const productHandler = {
     deleteProduct(id){
         return productService.deleteProduct(id);
     },
-    updateProduct(newProduct){
-        // pending to be completed
+    updateProduct(id, updatedProduct){
+        if (!updatedProduct) {
+            return;
+        }
+
+        let updatedProductStructure = {
+            "title": updatedProduct.title,
+            "description": updatedProduct.description,
+            "price": updatedProduct.price,
+            "image": updatedProduct.image
+        }
+
+        return productService.updateProduct(id, updatedProductStructure);
     }
 }
