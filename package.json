@@ -6,7 +6,8 @@
     "test": "jest",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "api": "json-server --watch ./api/products.json"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
