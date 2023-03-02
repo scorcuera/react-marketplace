@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { productHandler } from "../handlers/productHandler";
 import { Link } from 'react-router-dom';
 
 function Product({ product, deleteProduct }) {

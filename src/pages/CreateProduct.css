@@ -1,0 +1,35 @@
+.block--form {
+    height: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form--item {
+    width: 60vw;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form--item input, textarea {
+    width: 30rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form--item label {
+    width: 10rem;
+}
+
+.form--submit-btn {
+    margin-top: 3rem;
+    background-color:rgb(211, 211, 113);
+    height: 4rem;
+    width: 6rem;
+    border-radius: 5px;
+    border: none;
+}

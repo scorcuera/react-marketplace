@@ -21,7 +21,7 @@ function Dashboard() {
 
   let filteredProducts = productsData.filter(product => {
     return product.title.toLowerCase().includes(searchValue.toLowerCase());
-  })
+  });
 
   return (
     <div className="block--dashboard">

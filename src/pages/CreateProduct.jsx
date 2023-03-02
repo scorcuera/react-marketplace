@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { productHandler } from '../handlers/productHandler';
+import "./CreateProduct.css"
 
 const CreateProduct = () => {
     const [title, setTitle] = useState("");
@@ -31,21 +32,29 @@ const CreateProduct = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let newProduct = {title, description, price, image};
+        let newProduct = { title, description, price, image };
         productHandler.addProduct(newProduct);
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="image">Image</label>
-            <input type="file" onChange={handleImageChange} />
-            <label htmlFor="title">Title</label>
-            <input name="title" type="text" onChange={handleTitleChange} />
-            <label htmlFor="description">Description</label>
-            <input name="description" type="text" onChange={handleDescriptionChange} />
-            <label htmlFor="price">Price</label>
-            <input name="price" type="text" onChange={handlePriceChange}/>
-            <button type="submit">
+        <form className="block--form" onSubmit={handleSubmit}>
+            <div className="form--item form-image">
+                <label htmlFor="image">Image</label>
+                <input type="file" onChange={handleImageChange} />
+            </div>
+            <div className="form--item form-title">
+                <label htmlFor="title">Title</label>
+                <input name="title" type="text" onChange={handleTitleChange} />
+            </div>
+            <div className="form--item form-description">
+                <label htmlFor="description">Description</label>
+                <textarea name="description" type="text" onChange={handleDescriptionChange} />
+            </div>
+            <div className="form--item form-price">
+                <label htmlFor="price">Price</label>
+                <input name="price" type="text" onChange={handlePriceChange} />
+            </div>
+            <button className="form--submit-btn" type="submit">
                 Upload
             </button>
         </form>
