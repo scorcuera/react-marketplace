@@ -9,30 +9,30 @@ import CreateProduct from "../pages/CreateProduct";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/react-marketplace/",
         element: <Root />,
         children: [
             {
-                path: "/",
+                path: "/react-marketplace/",
                 element: <Dashboard />,
                 loader: fetchProducts,
             },
             {
-                path: "/products",
+                path: "/react-marketplace/products",
                 element: <Dashboard />,
                 loader: fetchProducts,
             },
             {
-                path: "products/:id",
+                path: "/react-marketplace/products/:id",
                 element: <ProductInfo />,
                 loader: fetchProduct,
             },
             {
-                path: "newProduct",
+                path: "/react-marketplace/newProduct",
                 element: <CreateProduct />,
             },
             {
-                path: "editProduct/:id",
+                path: "/react-marketplace/editProduct/:id",
                 element: <EditProduct />,
                 loader: fetchProduct
             },

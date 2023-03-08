@@ -28,12 +28,12 @@ function Product({ product, deleteProduct }) {
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={() => deleteProduct(id)}><DeleteIcon fontSize="large" />Delete</Button>
-                <Link className="edit--link" to={`/editProduct/${product.id}`}>
+                <Link className="edit--link" to={`../editProduct/${product.id}`}>
                     <Button size="small"><EditIcon fontSize="large" color="inherit" />Edit</Button>
                 </Link>
             </CardActions>
             <CardActions>
-                <Link className="edit--link" to={`/products/${product.id}`}>
+                <Link className="edit--link" to={`../products/${product.id}`}>
                     <Button size="small">More info</Button>
                 </Link>
             </CardActions>
