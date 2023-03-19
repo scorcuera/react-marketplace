@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Dashboard />,
-                loader: fetchProducts,
+                loader: fetchProducts
             },
             {
                 path: "/products",
@@ -47,6 +47,7 @@ async function fetchProducts() {
 }
 
 async function fetchProduct({ params }) {
+    console.log("esto es params", params)
     const product = await productHandler.loadProduct(params.id);
     return { product };
 }

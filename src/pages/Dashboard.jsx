@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom"
-import { useState, useMemo, useEffect } from "react";
+import { useState } from "react";
 import { productHandler } from "../handlers/productHandler";
 import Product from '../components/Product'
 import './Dashboard.css'
 
 function Dashboard() {
   const { products } = useLoaderData();
+  console.log(products)
   const [productsData, setProductsData] = useState(products);
   const [searchValue, setSearchValue] = useState("");
 
