@@ -36,6 +36,9 @@ export const router = createBrowserRouter([
                 element: <EditProduct />,
                 loader: fetchProduct
             },
+            {
+                path: "cart",
+            },
 
         ],
     },
