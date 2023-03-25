@@ -7,9 +7,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 
-function Product({ product, deleteProduct }) {
+function Product({ product, deleteProduct, addToCart }) {
 
     const { id, title, price, image } = product;
 
@@ -35,6 +36,7 @@ function Product({ product, deleteProduct }) {
                 <Link className="edit--link" to={`/products/${product.id}`}>
                     <Button size="small">More info</Button>
                 </Link>
+                <Button size="small" onClick={() => addToCart(product)}><ShoppingCartIcon fontSize="large" color="inherit" />Add to Cart</Button>
             </CardActions>
         </Card>
     )

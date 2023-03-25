@@ -3,6 +3,7 @@ import Root from "./Root";
 import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
 import EditProduct from "../pages/EditProduct";
+import Cart from "../pages/Cart";
 
 import { productHandler } from "../handlers/productHandler";
 import CreateProduct from "../pages/CreateProduct";
@@ -37,7 +38,8 @@ export const router = createBrowserRouter([
                 loader: fetchProduct
             },
             {
-                path: "cart",
+                path: "/cart",
+                element: <Cart />
             },
 
         ],
