@@ -6,7 +6,6 @@ import './Dashboard.css'
 
 function Dashboard() {
   const { products } = useLoaderData();
-  console.log(products)
   const [productsData, setProductsData] = useState(products);
   const [searchValue, setSearchValue] = useState("");
 
