@@ -15,15 +15,6 @@ export const productHandler = {
 
         return productService.submitProduct(newProductStructure);
     },
-    loadProducts(){
-        return productService.getProducts();
-    },
-    loadProduct(id) {
-        return productService.getProduct(id);
-    },
-    deleteProduct(id){
-        return productService.deleteProduct(id);
-    },
     updateProduct(id, updatedProduct){
         if (!updatedProduct) {
             return;

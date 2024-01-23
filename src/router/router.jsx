@@ -3,9 +3,8 @@ import Root from "./Root";
 import Dashboard from "../pages/Dashboard";
 import ProductInfo from "../components/ProductInfo";
 import EditProduct from "../pages/EditProduct";
-
-import { productHandler } from "../handlers/productHandler";
 import CreateProduct from "../pages/CreateProduct";
+import { productService } from "../services/productService";
 
 export const router = createBrowserRouter([
     {
@@ -42,12 +41,11 @@ export const router = createBrowserRouter([
 ]);
 
 async function fetchProducts() {
-    const products = await productHandler.loadProducts();
+    const products = await productService.getProducts();
     return { products };
 }
 
 async function fetchProduct({ params }) {
-    console.log("esto es params", params)
-    const product = await productHandler.loadProduct(params.id);
+    const product = await productService.getProduct(params.id);
     return { product };
 }
