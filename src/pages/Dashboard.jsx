@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom"
 import { useState } from "react";
-import { productHandler } from "../handlers/productHandler";
+import { productService } from "../services/productService";
 import Product from '../components/Product'
 import './Dashboard.css'
 
@@ -10,7 +10,7 @@ function Dashboard() {
   const [searchValue, setSearchValue] = useState("");
 
   const deleteProduct = async (id) => {
-    await productHandler.deleteProduct(id);
+    await productService.deleteProduct(id);
     setProductsData(productsData.filter(product => product.id !== id));
   }
 
