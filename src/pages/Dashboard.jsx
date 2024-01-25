@@ -5,7 +5,7 @@ import Product from '../components/Product'
 import './Dashboard.css'
 
 function Dashboard() {
-  const { products } = useLoaderData();
+  const products = useLoaderData();
   const [productsData, setProductsData] = useState(products);
   const [searchValue, setSearchValue] = useState("");
 
