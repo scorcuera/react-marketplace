@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { productHandler } from '../handlers/productHandler';
+import { convertToBase64 } from '../utils/convertToBase64';
 import "./CreateProduct.css"
 
 const CreateProduct = () => {
@@ -10,11 +11,9 @@ const CreateProduct = () => {
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            setImage(reader.result);
-        };
+        if (file) {
+            convertToBase64(file, setImage);
+        }
     };
 
     const handleTitleChange = (event) => {

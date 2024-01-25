@@ -5,6 +5,7 @@ import ProductInfo from "../components/ProductInfo";
 import EditProduct from "../pages/EditProduct";
 import CreateProduct from "../pages/CreateProduct";
 import { productService } from "../services/productService";
+import { loadProduct } from "../utils/loadProduct";
 
 export const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
             {
                 path: "products/:id",
                 element: <ProductInfo />,
-                loader: fetchProduct,
+                loader: loadProduct,
             },
             {
                 path: "newProduct",
@@ -33,14 +34,9 @@ export const router = createBrowserRouter([
             {
                 path: "editProduct/:id",
                 element: <EditProduct />,
-                loader: fetchProduct
+                loader: loadProduct
             },
 
         ],
     },
 ]);
-
-async function fetchProduct({ params }) {
-    const product = await productService.getProduct(params.id);
-    return { product };
-}

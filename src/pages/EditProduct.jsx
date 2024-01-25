@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { productHandler } from "../handlers/productHandler";
+import { convertToBase64 } from "../utils/convertToBase64";
 
 function EditProduct() {
     const { product } = useLoaderData();
@@ -12,11 +13,9 @@ function EditProduct() {
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            setImage(reader.result);
-        };
+        if (file) {
+            convertToBase64(file, setImage);
+        }
     };
 
     const handleTitleChange = (event) => {
