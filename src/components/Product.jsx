@@ -1,12 +1,4 @@
 import "./Product.css";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 
 function Product({ product, deleteProduct }) {
@@ -14,29 +6,20 @@ function Product({ product, deleteProduct }) {
     const { id, title, price, image } = product;
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                sx={{ height: 140 }}
-                image={image}
-                title={title}
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {title} - price: {price}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small" onClick={() => deleteProduct(id)}><DeleteIcon fontSize="large" />Delete</Button>
-                <Link className="edit--link" to={`/editProduct/${product.id}`}>
-                    <Button size="small"><EditIcon fontSize="large" color="inherit" />Edit</Button>
-                </Link>
-            </CardActions>
-            <CardActions>
-                <Link className="edit--link" to={`/products/${product.id}`}>
-                    <Button size="small">More info</Button>
-                </Link>
-            </CardActions>
-        </Card>
+        <a href="#" className="group">
+            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src={image} alt={title} className="h-full w-full object-cover object-center group-hover:opacity-75" />
+            </div>
+            <h3 className="mt-4 text-sm text-gray-700">{title}</h3>
+            <p className="mt-1 text-lg font-medium text-gray-900">{price}€</p>
+            <Link to={`/editProduct/${product.id}`}>
+                <button>Edit</button>
+            </Link>
+            <Link to={`/products/${product.id}`}>
+                <button>More info</button>
+            </Link>
+            <button onClick={() => deleteProduct(id)}>Delete</button>
+        </a>
     )
 }
 
