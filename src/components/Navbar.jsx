@@ -3,9 +3,9 @@ import "./Navbar.css"
 
 function Navbar() {
     return (
-        <nav>
-            <Link to="/products" className="nav--item">My products</Link>
-            <Link to="/newProduct" className="nav--item">Add product</Link>
+        <nav className="bg-gray-800 shadow-inner">
+            <Link to="/products" className="text-slate-50 text-lg font-light">My products</Link>
+            <Link to="/newProduct" className="text-slate-50 text-lg">Add product</Link>
         </nav>
     )
 }
